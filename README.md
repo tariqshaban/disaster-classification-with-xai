@@ -53,8 +53,9 @@ The main operations conducted in this repository are thus:
 * Randomly partitioning the dataset into training, validation, and test (70% 20% 10%).
 * Build a CNN model with the following characteristics:
     * **Hyperparameters**:
-        * Epochs: 50
-        * Learning rate: 0.01
+        * The specified number of epochs
+        * The specified learning rate
+        * The specified optimizer
     * **Layers**:
         * The selected base model
         * Identity: since directly accessing the base model for the Grad-CAM is not possible
@@ -66,7 +67,6 @@ The main operations conducted in this repository are thus:
     * Validation accuracy
     * Training loss
     * Validation loss
-    * Validation loss
     * Testing confusion matrix (applicable since the model is for multi-label classification)
 * Visualize image samples :
     * Display original image
@@ -74,6 +74,38 @@ The main operations conducted in this repository are thus:
     * Display image augmented with Grad-CAM explainer
     * Display image augmented with Grad-CAM++ explainer
 * Modify the global variables based on the observed results.
+
+The following methods should be invoked to build and evaluate the model, as well as to implement XAI techniques:
+
+``` python
+# Ready the dataset and partition it to training, validation, and testing
+prime_dataset()
+
+# Build the model, and optionally plot performance measurements
+model = build_model(measure_performance=True)
+```
+
+``` python
+# Fetches a single image via a specified URL in a form of the matrix as a nested list
+img = url_to_image('https://maverickraylaw.com/wp-content/uploads/2021/10/shutterstock_1143680258-1.jpg')
+
+# Conduct XAI methods for an image on a predefined model; XAI methods include LIME, Grad-CAM, and Grad-CAM++
+plot_XAI(img, model)
+
+# Predict the image's class based on a predefined model
+predict_image_class(img, model)
+```
+
+``` python
+# Fetches a single image directly from the dataset in the form of a matrix as a nested list
+img = path_to_image('infrastructure/05_01_1225.png')
+
+# Conduct XAI methods for an image on a predefined model; XAI methods include LIME, Grad-CAM, and Grad-CAM++
+plot_XAI(img, model)
+
+# Predict the image's class based on a predefined model
+predict_image_class(img, model)
+```
 
 Findings
 ------------
