@@ -194,7 +194,7 @@ Findings
 
 > ### Model Performance
 >
-> The following images are the result of using ResNet50 with RMSProp optimizer on 0.01 learning rate on a different
+> The following images are the result of using ResNet50 with Adam optimizer on 0.001 learning rate on a different
 > runtime than the table
 >
 > ![accuracy.png](assets/images/accuracy.jpg)
