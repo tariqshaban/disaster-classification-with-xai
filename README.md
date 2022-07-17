@@ -146,8 +146,8 @@ Findings
     <td>6.3463</td>
     <td>%92.57</td>
     <td>0.4252</td>
-    <td>&#9989; %95.68</td>
-    <td>&#9989; 0.1455</td>
+    <td>%95.68</td>
+    <td>0.1455</td>
   </tr>
   <tr>
     <th rowspan="2">InceptionV3</th>
@@ -186,6 +186,82 @@ Findings
     <td>0.8974</td>
     <td>%89.69</td>
     <td>0.2934</td>
+  </tr>
+  <tr>
+    <th rowspan="2">EfficientNetB0</th>
+    <th>RMSProp</th>
+    <td>%93.29</td>
+    <td>1.4317</td>
+    <td>%94.00</td>
+    <td>0.1832</td>
+    <td>%94.72</td>
+    <td>0.1617</td>
+  </tr>
+  <tr>
+    <th>Adam</th>
+    <td>%89.45</td>
+    <td>1.4873</td>
+    <td>%95.44</td>
+    <td>0.1640</td>
+    <td>%94.00</td>
+    <td>0.1777</td>
+  </tr>
+  <tr>
+    <th rowspan="2">EfficientNetB7</th>
+    <th>RMSProp</th>
+    <td>%95.56</td>
+    <td>0.9037</td>
+    <td>%95.30</td>
+    <td>0.1320</td>
+    <td>%95.30</td>
+    <td>0.1625</td>
+  </tr>
+  <tr>
+    <th>Adam</th>
+    <td>%95.62</td>
+    <td>0.9415</td>
+    <td>%95.06</td>
+    <td>0.1395</td>
+    <td>%95.22</td>
+    <td>0.1685</td>
+  </tr>
+  <tr>
+    <th rowspan="2">EfficientNetV2B0</th>
+    <th>RMSProp</th>
+    <td>%96.04</td>
+    <td>0.6192</td>
+    <td>&#9989; %97.42</td>
+    <td>&#9989; 0.0788</td>
+    <td>%96.15</td>
+    <td>0.1337</td>
+  </tr>
+  <tr>
+    <th>Adam</th>
+    <td>%97.24</td>
+    <td>0.3781</td>
+    <td>%97.13</td>
+    <td>0.0874</td>
+    <td>%95.41</td>
+    <td>0.1389</td>
+  </tr>
+  <tr>
+    <th rowspan="2">EfficientNetV2L</th>
+    <th>RMSProp</th>
+    <td>%93.01</td>
+    <td>0.6116</td>
+    <td>%95.66</td>
+    <td>0.1337</td>
+    <td>%92.95</td>
+    <td>0.2425</td>
+  </tr>
+  <tr>
+    <th>Adam</th>
+    <td>%93.09</td>
+    <td>0.7166</td>
+    <td>%95.92</td>
+    <td>0.1323</td>
+    <td>%93.93</td>
+    <td>0.2134</td>
   </tr>
 </tbody>
 </table>
