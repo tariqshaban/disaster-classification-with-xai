@@ -35,6 +35,7 @@ Methodology
 The main operations conducted in this repository are thus:
 
 * Modify the `global variables` section:
+    * Generic Seed
     * Epochs
     * Learning rate:
         * 0.1
@@ -44,6 +45,10 @@ The main operations conducted in this repository are thus:
         * ResNet50
         * InceptionV3
         * VGG19
+        * EfficientNetB0
+        * EfficientNetB7
+        * EfficientNetV2B0
+        * EfficientNetV2L
     * Preprocessing method (in concurrence with the pretrained model)
     * Optimization algorithm:
         * Root Mean Squared Propagation (RMSProp)
@@ -98,7 +103,7 @@ predict_image_class(img, model)
 
 ``` python
 # Fetches a single image directly from the dataset in the form of a matrix as a nested list
-img = path_to_image('infrastructure/05_01_1225.png')
+img = path_to_image('05_01_1225.png')
 
 # Conduct XAI methods for an image on a predefined model; XAI methods include LIME, Grad-CAM, and Grad-CAM++
 plot_XAI(img, model)
@@ -133,140 +138,142 @@ Findings
   <tr>
     <th rowspan="2">ResNet50</th>
     <th>RMSProp</th>
-    <td>%92.81</td>
-    <td>4.8205</td>
-    <td>%90.41</td>
-    <td>0.7413</td>
-    <td>%94.24</td>
-    <td>0.1648</td>
+    <td>%92.38</td>
+    <td>7.1750</td>
+    <td>%93.48</td>
+    <td>0.7215</td>
+    <td>&#9989; %95.16</td>
+    <td>0.1901</td>
   </tr>
   <tr>
     <th>Adam</th>
-    <td>%89.45</td>
-    <td>6.3463</td>
-    <td>%92.57</td>
-    <td>0.4252</td>
-    <td>%95.68</td>
-    <td>0.1455</td>
+    <td>%93.41</td>
+    <td>6.8198</td>
+    <td>%91.79</td>
+    <td>0.8718</td>
+    <td>&#9989; %95.16</td>
+    <td>0.1901</td>
   </tr>
   <tr>
     <th rowspan="2">InceptionV3</th>
     <th>RMSProp</th>
-    <td>%86.57</td>
-    <td>7.7356</td>
-    <td>%83.45</td>
-    <td>1.1538</td>
-    <td>%93.05</td>
-    <td>0.2375</td>
+    <td>%89.82</td>
+    <td>7.3318</td>
+    <td>%90.48</td>
+    <td>0.8958</td>
+    <td>%90.92</td>
+    <td>0.2828</td>
   </tr>
   <tr>
     <th>Adam</th>
-    <td>%88.73</td>
-    <td>8.2804</td>
-    <td>%91.61</td>
-    <td>0.5801</td>
-    <td>%92.81</td>
-    <td>0.2396</td>
+    <td>%86.37</td>
+    <td>13.0176</td>
+    <td>%87.91</td>
+    <td>1.0381</td>
+    <td>%90.92</td>
+    <td>0.2828</td>
   </tr>
   <tr>
     <th rowspan="2">VGG19</th>
     <th>RMSProp</th>
-    <td>%82.73</td>
-    <td>7.0969</td>
-    <td>%80.82</td>
-    <td>1.0777</td>
-    <td>%89.93</td>
-    <td>0.3247</td>
+    <td>%88.72</td>
+    <td>10.3487</td>
+    <td>%89.30</td>
+    <td>0.9921</td>
+    <td>%90.99</td>
+    <td>0.3034</td>
   </tr>
   <tr>
     <th>Adam</th>
-    <td>%76.74</td>
-    <td>12.5101</td>
-    <td>%87.29</td>
-    <td>0.8974</td>
-    <td>%89.69</td>
-    <td>0.2934</td>
+    <td>%87.91</td>
+    <td>12.1033</td>
+    <td>%88.94</td>
+    <td>0.9679</td>
+    <td>%90.99</td>
+    <td>0.3034</td>
   </tr>
   <tr>
     <th rowspan="2">EfficientNetB0</th>
     <th>RMSProp</th>
-    <td>%93.29</td>
-    <td>1.4317</td>
-    <td>%94.00</td>
-    <td>0.1832</td>
-    <td>%94.72</td>
-    <td>0.1617</td>
+    <td>%91.06</td>
+    <td>2.7745</td>
+    <td>%91.79</td>
+    <td>0.3696</td>
+    <td>%93.11</td>
+    <td>0.2279</td>
   </tr>
   <tr>
     <th>Adam</th>
-    <td>%89.45</td>
-    <td>1.4873</td>
-    <td>%95.44</td>
-    <td>0.1640</td>
-    <td>%94.00</td>
-    <td>0.1777</td>
+    <td>%90.55</td>
+    <td>3.2243</td>
+    <td>%91.79</td>
+    <td>0.3696</td>
+    <td>%93.11</td>
+    <td>0.2279</td>
   </tr>
   <tr>
     <th rowspan="2">EfficientNetB7</th>
     <th>RMSProp</th>
-    <td>%95.56</td>
-    <td>0.9037</td>
-    <td>%95.30</td>
-    <td>0.1320</td>
-    <td>%95.30</td>
-    <td>0.1625</td>
+    <td>%89.45</td>
+    <td>3.3252</td>
+    <td>%90.62</td>
+    <td>0.4246</td>
+    <td>%90.99</td>
+    <td>0.2771</td>
   </tr>
   <tr>
     <th>Adam</th>
-    <td>%95.62</td>
-    <td>0.9415</td>
-    <td>%95.06</td>
-    <td>0.1395</td>
-    <td>%95.22</td>
-    <td>0.1685</td>
+    <td>%89.45</td>
+    <td>3.2520</td>
+    <td>%90.62</td>
+    <td>0.4246</td>
+    <td>%90.99</td>
+    <td>0.2771</td>
   </tr>
   <tr>
     <th rowspan="2">EfficientNetV2B0</th>
     <th>RMSProp</th>
-    <td>%96.04</td>
-    <td>0.6192</td>
-    <td>&#9989; %97.42</td>
-    <td>&#9989; 0.0788</td>
-    <td>%96.15</td>
-    <td>0.1337</td>
+    <td>%92.01</td>
+    <td>2.3601</td>
+    <td>%92.75</td>
+    <td>0.3006</td>
+    <td>%94.07</td>
+    <td>&#9989; 0.1897</td>
   </tr>
   <tr>
     <th>Adam</th>
-    <td>%97.24</td>
-    <td>0.3781</td>
-    <td>%97.13</td>
-    <td>0.0874</td>
-    <td>%95.41</td>
-    <td>0.1389</td>
+    <td>%92.82</td>
+    <td>2.1001</td>
+    <td>%92.75</td>
+    <td>0.3006</td>
+    <td>%94.07</td>
+    <td>&#9989; 0.1897</td>
   </tr>
   <tr>
     <th rowspan="2">EfficientNetV2L</th>
     <th>RMSProp</th>
-    <td>%93.01</td>
-    <td>0.6116</td>
-    <td>%95.66</td>
-    <td>0.1337</td>
-    <td>%92.95</td>
-    <td>0.2425</td>
+    <td>%91.28</td>
+    <td>1.6932</td>
+    <td>%90.62</td>
+    <td>0.3512</td>
+    <td>%91.79</td>
+    <td>0.2696</td>
   </tr>
   <tr>
     <th>Adam</th>
-    <td>%93.09</td>
-    <td>0.7166</td>
-    <td>%95.92</td>
-    <td>0.1323</td>
-    <td>%93.93</td>
-    <td>0.2134</td>
+    <td>%90.70</td>
+    <td>1.9538</td>
+    <td>%90.62</td>
+    <td>0.3512</td>
+    <td>%91.79</td>
+    <td>0.2696</td>
   </tr>
 </tbody>
 </table>
 
-> Based on the table, ResNet50 with Adam optimizer and a learning rate of 0.001 returned the best results.
+> Based on the table, ResNet50 at a learning rate of 0.001 returned the best accuracy, while EfficientNetV2B0 at a
+> learning rate of 0.001 returned the lowest loss, the optimization algorithm type did not seem to carry a significant
+> contribution.
 
 > ### Model Performance
 >
@@ -311,10 +318,7 @@ Findings
 Notes
 ------------
 
-* Deep learning algorithms may tend to have slightly different results, even when fixating hyperparameters and
-  conditions; due to randomness properties of the initial weights.
-* For unknown reasons, some images did produce a valid interpretable images on both Grad-CAM and Grad-CAM++
-* It appears that some of the provided true labels of the images are incorrect. A fair amount of images are not refined,
+* It appears that some of the provided true labels of the images are incorrect. A fair amount of images is not refined,
   that is, some images contain banners or even watermarks that might hinder the model’s performance.
 
 --------
