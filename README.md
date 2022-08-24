@@ -5,8 +5,8 @@ This is a submission of **final paper** for the **CIS726** course.
 It contains the code necessary to implement a CNN model concerning disasters while including XAI visualization for
 selected images.
 
-The dataset from the [Disaster Classification](https://www.kaggle.com/code/teresadl/disaster-classification) has been
-used.
+The dataset from the [Disaster Image Classification](https://www.kaggle.com/datasets/varpit94/disaster-images-dataset)
+has been used.
 
 
 Collaborators 🥇
