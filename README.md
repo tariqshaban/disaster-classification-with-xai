@@ -37,7 +37,7 @@ Methodology
 The main operations conducted in this repository are thus:
 
 * Modify the `global variables` section:
-    * Generic Seed
+    * Generic seed
     * Epochs
     * Learning rate:
         * 0.01
@@ -83,6 +83,19 @@ The main operations conducted in this repository are thus:
     * Display the image augmented with Grad-CAM++ explainer (Non-ViT models only)
 * Modify the global variables based on the observed results.
 
+> **Note**: Classical machine learning classifiers are added to assess the effectiveness of the deep learning models;
+> however, they are not fitted with XAI. Such machine learning models include:
+> * Bagging
+> * Decision tree
+> * Random forest
+> * K-nearest neighbors
+> * SVM
+> * Linear SVM (with SGD training)
+> * Logistic regression (with SGD training)
+>
+> **HOG** (Histogram of Oriented Gradients) was used as a feature descriptor to extract the edge orientation of the
+> images. Then, the result was flattened to be trained by these models.
+
 The following methods should be invoked to build and evaluate the model, as well as to implement XAI techniques:
 
 ``` python
@@ -120,6 +133,53 @@ predict_image_class(img, model)
 
 Findings
 ------------
+
+<table>
+<thead>
+  <tr>
+    <th>Machine Learning Model</th>
+    <th>Disaster Image Classification Dataset</th>
+    <th>MEDIC Dataset</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>Bagging</th>
+    <td>%61.83</td>
+    <td>%43.22</td>
+  </tr>
+  <tr>
+    <th>Decision Tree</th>
+    <td>%44.98</td>
+    <td>%33.55</td>
+  </tr>
+  <tr>
+    <th>Random Forest</th>
+    <td>%64.10</td>
+    <td>%46.02</td>
+  </tr>
+  <tr>
+    <th>K-Nearest Neighbors</th>
+    <td>%35.67</td>
+    <td>%41.86</td>
+  </tr>
+  <tr>
+    <th>SVM</th>
+    <td>&#9989; %72.52</td>
+    <td>&#9989; %54.46</td>
+  </tr>
+  <tr>
+    <th>Linear SVM (with SGD training)</th>
+    <td>%66.08</td>
+    <td>%43.66</td>
+  </tr>
+  <tr>
+    <th>Logistic Regression (with SGD training)</th>
+    <td>%65.49</td>
+    <td>%43.27</td>
+  </tr>
+</tbody>
+</table>
 
 <table>
 <thead>
