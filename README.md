@@ -111,7 +111,7 @@ model = build_model(measure_performance=True)
 
 ``` python
 # Fetches a single image via a specified URL in the form of a matrix as a nested list
-img = url_to_image('https://maverickraylaw.com/wp-content/uploads/2021/10/shutterstock_1143680258-1.jpg')
+img = url_to_image('https://www.enr.com/ext/resources/News/2016/September/north_carolina_hurricane_matthew.jpg')
 
 # Conduct XAI methods for an image on a predefined model; XAI methods include LIME, Grad-CAM, and Grad-CAM++
 plot_XAI(img, model)
