@@ -1,6 +1,7 @@
 Conducting Explainable AI (XAI) on Disasters Image Classification Model Augmented with Pretrained CNN
 ==============================
-This is a submission of **final paper** for the **CIS726** course.
+This is the implementation of the
+paper [Natural disasters detection using explainable deep learning](https://doi.org/10.1016/j.iswa.2024.200430).
 
 It contains the code necessary to implement a CNN model concerning disasters while including XAI visualization for
 selected images.
@@ -8,13 +9,6 @@ selected images.
 The dataset from the [Disaster Image Classification](https://www.kaggle.com/datasets/varpit94/disaster-images-dataset)
 and [MEDIC](https://github.com/firojalam/medic/) has been used.
 
-
-Collaborators 🥇
-------------
-
-* Tariq Sha'ban
-* Rand Agha
-* Lujain Ghazalat
 
 Getting Started
 ------------
@@ -557,8 +551,8 @@ Findings
 >
 > The following are the XAI interpretation on random image samples, either from the dataset itself, or from external
 > sources.
-> 
-> ResNet50 has been used for the XAI instead of the best model (ViT-B-32); since Grad-CAM and Grad-CAM++ require a 2D 
+>
+> ResNet50 has been used for the XAI instead of the best model (ViT-B-32); since Grad-CAM and Grad-CAM++ require a 2D
 > layer; which is only available in the pretrained CNN models.
 >
 > ![xai_infrastructure.png](assets/images/explainable_ai/xai_infrastructure.jpg)
@@ -578,5 +572,26 @@ Notes
 
 * It appears that some of the provided true labels of the images are incorrect. A fair amount of images is not refined,
   that is, some images contain banners or even watermarks that might hinder the model’s performance.
+
+Citation
+------------
+
+Ahmad M. Mustafa, Rand Agha, Lujain Ghazalat, Tariq Sha’ban,
+[Natural disasters detection using explainable deep learning](https://doi.org/10.1016/j.iswa.2024.200430),
+Intelligent Systems with Applications,
+2024,
+200430,
+ISSN 2667-3053.
+
+    @article{MUSTAFA2024200430,
+        title = {Natural disasters detection using explainable deep learning},
+        journal = {Intelligent Systems with Applications},
+        pages = {200430},
+        year = {2024},
+        issn = {2667-3053},
+        doi = {https://doi.org/10.1016/j.iswa.2024.200430},
+        url = {https://www.sciencedirect.com/science/article/pii/S2667305324001042},
+        author = {Ahmad M. Mustafa and Rand Agha and Lujain Ghazalat and Tariq Sha’ban},
+    }
 
 --------
